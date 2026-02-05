@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Be My Valentine 💖</title>
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffc0cb;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      width: 300px;
+    }
+
+    h1 {
+      color: #e60073;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background-color: #ff4d88;
+      color: white;
+    }
+
+    .no {
+      background-color: #ccc;
+      position: relative;
+    }
+
+    /* Polaroid GIF */
+    .polaroid {
+      background: white;
+      padding: 10px 10px 30px;
+      width: 220px;
+      margin: 0 auto 20px;
+      border-radius: 8px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      transform: rotate(-2deg);
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    .polaroid img {
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .polaroid p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #555;
+      font-family: "Comic Sans MS", cursive;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9) rotate(-2deg);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) rotate(-2deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>Will you be my Valentine? 💘</h1>
+    <button class="yes" onclick="yesClicked()">Yes ❤️</button>
+    <button class="no" onmouseover="moveNo()">No 💔</button>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.querySelector('.card').innerHTML = `
+        <div class="polaroid">
+          <img src="us.gif" alt="Us 💕">
+          <p>Forever us 💖</p>
+        </div>
+        <h1>Yayyy! 💖🥰</h1>
+        <p>You just made my day!</p>
+      `;
+    }
+
+    function moveNo() {
+      const btn = document.querySelector('.no');
+      btn.style.left = Math.random() * 120 - 60 + "px";
+      btn.style.top = Math.random() * 120 - 60 + "px";
+    }
+  </script>
+
+</body>
+</html>
